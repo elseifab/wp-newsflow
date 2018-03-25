@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="dashicons-before dashicons-lightbulb">
+        <h1 class="dashicons-before dashicons-filter">
             Filters
         </h1>
         <Button type="primary">Another primary button</Button>

@@ -14,7 +14,7 @@ class AdminSetup implements SetupInterface
             if (!strpos($hook, '_wp-newsflow-')) {
                 return;
             }
-            wp_enqueue_script('newsflow3-js', plugins_url("/dist/main.js", dirname(__DIR__)), [], uniqid(), true);
+            wp_enqueue_script('newsflow3-js', plugins_url("/dist/application.js", dirname(__DIR__)), [], uniqid(), true);
         });
 
         add_action('admin_menu', function () {
