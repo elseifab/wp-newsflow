@@ -1,5 +1,3 @@
-<div class="wrap">
-    <h2 class="dashicons-before dashicons-lightbulb">
-        Newsflow Feed
-    </h2>
+<div class="wrap" id="newsflow-app">
+    <newsflow-feed></newsflow-feed>
 </div>

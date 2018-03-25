@@ -1,8 +1,3 @@
-<div class="wrap">
-    <h2 class="dashicons-before dashicons-admin-generic">
-        <?=$headline?>
-    </h2>
-    <p>
-        <?=$body?>
-    </p>
+<div class="wrap" id="newsflow-app">
+    <newsflow-settings></newsflow-settings>
 </div>
