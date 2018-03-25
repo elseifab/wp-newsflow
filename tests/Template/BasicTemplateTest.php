@@ -9,7 +9,7 @@ class BasicTemplateTest extends \WP_UnitTestCase
 
     public function testAdminPageRender()
     {
-        $output = Template::render('admin/settings/page', [
+        $output = Template::render('admin/menu/settings', [
             'headline' => 'This is the Headline',
             'body' => 'This is the body',
         ]);

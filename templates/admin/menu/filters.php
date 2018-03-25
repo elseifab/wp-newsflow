@@ -1,8 +1,5 @@
 <div class="wrap">
-    <h2>
+    <h2 class="dashicons-before dashicons-lightbulb">
         <?=$headline?>
     </h2>
-    <p>
-        <?=$body?>
-    </p>
 </div>

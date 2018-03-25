@@ -2,6 +2,8 @@
 
 namespace Newsflow\WP\Setup;
 
+use Newsflow\WP\Admin\Page;
+
 class AdminMenuSetup implements SetupInterface
 {
 
@@ -10,26 +12,29 @@ class AdminMenuSetup implements SetupInterface
 
         add_action('admin_menu', function () {
 
+            $adminPages = new Page();
+            $pages = $adminPages->all();
+
             \add_menu_page(
-                __('Newsflow', 'newsflow'),
-                __('Newsflow', 'newsflow'),
+                'Newsflow3',
+                'Newsflow',
                 'manage_options',
-                'wp-newsflow-admin',
-                'Newsflow\WP\Admin\Menu::render',
+                'wp-newsflow-feed',
+                'Newsflow\WP\Admin\Page::feed',
                 "dashicons-lightbulb",
                 8
             );
 
-            /*
-            \add_submenu_page(
-                'options-general.php',
-                __('Story Engine', 'wp-story-engine'),
-                __('Story Engine', 'wp-story-engine'),
-                'manage_options',
-                'wp-story-engine-settings',
-                'Newsflow\WP\Setting\AdminMenu::render'
-            );
-            */
+            foreach ($pages as $key => $page) {
+                \add_submenu_page(
+                    'wp-newsflow-feed',
+                    $pages[$key],
+                    $pages[$key],
+                    'manage_options',
+                    'wp-newsflow-' . $key,
+                    'Newsflow\WP\Admin\Page::' . $key
+                );
+            }
 
         });
 
